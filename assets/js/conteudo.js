@@ -18,14 +18,9 @@ window.CONTEUDO = {
 
   /* ===================== CONTATO (aparece no site todo) ===================== */
   contato: {
-    /* Número do WhatsApp principal (Aulas, oficinas e geral) */
+    /* Número do WhatsApp: 55 (Brasil) + 42 (DDD) + número, só dígitos. */
     whatsapp: "5542999872929",
     whatsappMensagem: "Olá, Celine! Vim pelo seu site e gostaria de saber mais.",
-    
-    /* Número do WhatsApp da Secretária (Orçamentos de Casamentos / Pintura ao Vivo) */
-    whatsappCerimonial: "5547984800521",
-    whatsappCerimonialMensagem: "Olá! Gostaria de solicitar um orçamento para pintura ao vivo em evento/casamento.",
-
     instagram: "https://instagram.com/celine.pinturas",
     instagramArroba: "@celine.pinturas",
     instagramCerimonial: "https://instagram.com/celine.p.cerimonial",
@@ -44,7 +39,35 @@ window.CONTEUDO = {
     botaoSecundario: "Ver o ateliê"
   },
 
-  /* ===================== CONHEÇA O ATELIÊ (carrossel: fotos + vídeos) ======= */
+  /* ===================== CONHEÇA O ATELIÊ (carrossel: fotos + vídeos) =======
+     É a primeira parada depois das boas-vindas: um passeio pelo espaço.
+     Cada item de "itens" é uma FOTO ou um VÍDEO. Eles aparecem nesta ordem,
+     deslizando para o lado (no celular arraste com o dedo; no computador use
+     as setas ‹ › ou role para o lado).
+
+       • FOTO:
+         { tipo: "foto", src: "assets/images/espaco/espaco-01.webp", alt: "descrição da foto" }
+
+       • VÍDEO (arquivo .mp4 — de preferência hospedado no Cloudinary):
+         { tipo: "video", fonte: "arquivo",
+           src:    "https://res.cloudinary.com/.../q_auto/v123/video.mp4",
+           cartaz: "assets/images/espaco/poster-convite.webp",
+           titulo: "Legenda que aparece embaixo do vídeo" }
+         (A dica "q_auto" no link, logo após "/upload/", faz o Cloudinary
+          entregar o vídeo já otimizado. Também aceita um arquivo local em
+          assets/videos/espaco/, mas vídeos grandes pesam no GitHub.)
+
+       • VÍDEO do YouTube (use quando o arquivo for muito grande):
+         { tipo: "video", fonte: "youtube",
+           src: "https://www.youtube.com/embed/CODIGO_DO_VIDEO",
+           titulo: "Legenda do vídeo" }
+
+     Dicas:
+       - Para REORDENAR: recorte e cole a linha inteira do item para cima/baixo.
+       - Para ESCONDER um item: apague a linha dele (cuide para não deixar
+         vírgula sobrando no item anterior).
+       - As fotos NUNCA são cortadas: cada uma mantém seu formato (em pé ou
+         deitada). É só colocar boas fotos que o site se encarrega do resto. */
   espaco: {
     eyebrow: "Conheça o espaço",
     titulo: "Conheça meu ateliê",
@@ -85,10 +108,12 @@ window.CONTEUDO = {
     assinatura: "Celine Boava"
   },
 
-  /* ===================== SERVIÇOS (6 cartões) ============================== */
+  /* ===================== SERVIÇOS (6 cartões) ==============================
+     icone: pincel | paleta | alianca | estrela | balao | fogo
+     Cada cartão abre o WhatsApp com a "mensagem" pronta abaixo. */
   servicos: [
     { icone: "pincel",  titulo: "Retratos & encomendas", texto: "Retratos e obras criados a partir da sua história, das suas fotos e dos seus momentos mais queridos — em óleo, com presença e emoção.", botao: "Encomendar", mensagem: "Olá, Celine! Gostaria de um orçamento para uma pintura personalizada." },
-    { icone: "alianca", titulo: "Pintura ao vivo",       texto: "Levo o cavalete para casamentos e eventos e pinto a cena ao vivo. Ao final, vocês levam para casa uma tela original — muito além de uma fotografia.", botao: "Reservar data", whatsapp: "5547984800521", mensagem: "Olá! Gostaria de saber mais sobre a pintura ao vivo para o meu evento/casamento." },
+    { icone: "alianca", titulo: "Pintura ao vivo",       texto: "Levo o cavalete para casamentos e eventos e pinto a cena ao vivo. Ao final, vocês levam para casa uma tela original — muito além de uma fotografia.", botao: "Reservar data", mensagem: "Olá, Celine! Gostaria de saber mais sobre a pintura ao vivo para o meu evento." },
     { icone: "paleta",  titulo: "Aulas & oficinas",      texto: "Aulas e oficinas de pintura a óleo para todos os níveis, mentoria durante a produção da pintura no ritmo de cada aluno.", botao: "Agendar aula", mensagem: "Olá, Celine! Tenho interesse nas aulas de pintura." },
     { icone: "balao",   titulo: "Aulas aprofundadas",    texto: "Voltada para o aprofundamento técnico da pintura. Todo mês, um tema para o desenvolvimento de uma técnica com uma pintura específica. Para maiores de 11 anos.", botao: "Agendar aula", mensagem: "Olá! Gostaria de saber mais sobre as aulas aprofundadas." },
     { icone: "fogo",    titulo: "Cursos intensivos",     texto: "Aulas práticas de poucas horas, com aprofundamento de uma técnica específica (retrato, paisagem ou outro tema). Acontecem em dias distintos do mês e você sai com uma pintura pronta — ideal para quem quer se descobrir na pintura.", botao: "Agendar aula", mensagem: "Olá! Gostaria de saber quando é o próximo curso intensivo." },
@@ -100,8 +125,6 @@ window.CONTEUDO = {
     eyebrow: "Pintura ao vivo · cerimonial",
     titulo: "A obra nascendo diante dos seus convidados",
     texto: "A pintura ao vivo transforma um dos momentos mais especiais da celebração em uma obra de arte original. Antes do evento, faço uma reunião com o casal para entender a história e os sentimentos que serão representados. No dia, monto o cavalete no local e desenvolvo a pintura ao vivo — os convidados acompanham cada etapa e, ao final, o casal recebe uma tela única, criada para eternizar aquele dia.",
-    whatsapp: "5547984800521",
-    mensagem: "Olá! Gostaria de solicitar um orçamento para pintura ao vivo em casamento/evento.",
     destaques: [
       "Reunião de alinhamento com o casal antes do evento",
       "Pintura criada ao vivo durante a celebração",
@@ -109,6 +132,7 @@ window.CONTEUDO = {
       "Uma experiência interativa para os convidados",
       "Acompanhe os bastidores em @celine.p.cerimonial"
     ],
+    /* Fotos reais de eventos e casamentos (melhores primeiro). */
     galeria: [
       { src: "assets/images/events/evento-01.webp", alt: "Celine pintando ao vivo durante a cerimônia, com os convidados ao fundo" },
       { src: "assets/images/events/evento-02.webp", alt: "Pintura ao vivo no cavalete com os noivos no altar ao fundo" },
@@ -143,6 +167,7 @@ window.CONTEUDO = {
       { src: "assets/images/portfolio/obra-05.webp", alt: "Paisagem em óleo", categoria: "paisagens" },
       { src: "assets/images/portfolio/obra-06.webp", alt: "Xícara de chá, rosas e envelope lacrado — óleo sobre tela", categoria: "autorais" }
     ],
+    /* Vídeo: tour pelas obras. tipo "arquivo" (mp4 no projeto) ou "youtube". */
     videos: [
       { tipo: "arquivo", src: "assets/videos/events/arte-na-garagem.mp4", cartaz: "assets/images/portfolio/poster-garagem.webp", titulo: "Arte na garagem — obras da Celine" }
     ]
@@ -214,7 +239,7 @@ window.CONTEUDO = {
     ]
   },
 
-  /* ===================== DEPOIMENTOS ====================================== */
+  /* ===================== DEPOIMENTOS (reais, dos alunos) ================== */
   depoimentos: {
     eyebrow: "Quem já viveu essa experiência",
     titulo: "Depoimentos",
@@ -235,7 +260,7 @@ window.CONTEUDO = {
     titulo: "Perguntas frequentes",
     itens: [
       { pergunta: "Como funciona uma encomenda de pintura?", resposta: "Conversamos sobre a ideia, as fotos e o tamanho da tela. Faço um orçamento e, com a aprovação, inicio a obra em óleo, enviando atualizações até a entrega." },
-      { pergunta: "Vocês fazem pintura ao vivo em casamentos?", resposta: "Sim! Monto o cavalete no evento e pinto a cena ao vivo. Ao final, a tela original fica com vocês. Consulte disponibilidade e orçamentos diretamente com nossa equipe pelo WhatsApp." },
+      { pergunta: "Vocês fazem pintura ao vivo em casamentos?", resposta: "Sim! Monto o cavalete no evento e pinto a cena ao vivo. Ao final, a tela original fica com vocês. Consulte disponibilidade pelo WhatsApp." },
       { pergunta: "Preciso ter experiência para fazer aulas?", resposta: "Não. As aulas atendem do iniciante ao avançado, respeitando o ritmo de cada aluno." },
       { pergunta: "Quais materiais são usados nas aulas?", resposta: "Trabalhamos com pintura a óleo. No primeiro contato eu oriento sobre os materiais necessários." },
       { pergunta: "Você atende fora de Guarapuava?", resposta: "Sim, dependendo da data e do tipo de trabalho. Me chame no WhatsApp para combinarmos." },
