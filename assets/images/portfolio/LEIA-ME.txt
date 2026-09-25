@@ -1,1 +1,0 @@
-Coloque aqui as fotos das OBRAS do atelie (retratos, autorais, encomendas, paisagens). Depois liste cada arquivo em assets/js/conteudo.js, secao 'atelie'.
